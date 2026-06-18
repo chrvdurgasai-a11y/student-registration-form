@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A premium, interactive, and responsive student registration form built with HTML, CSS, and vanilla JS.">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <div class="card" id="registrationCard">
+      
+      <!-- Registration Form -->
+      <div class="card-header">
+        <h1 class="card-title" id="formHeading">Student Registration</h1>
+        <p class="card-subtitle">Fill in your information to enroll in a course</p>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        
+        <!-- Full Name Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input 
+              type="text" 
+              id="fullName" 
+              class="form-input" 
+              placeholder=" " 
+              required
+              minlength="3"
+            >
+            <label for="fullName" class="form-label">Full Name</label>
+            <!-- Custom Success Icon -->
+            <div class="validation-icon validation-icon-valid" style="color: var(--success-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <!-- Custom Error Icon -->
+            <div class="validation-icon validation-icon-invalid" style="color: var(--error-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <span class="error-message" id="fullNameError">Full Name is required (minimum 3 characters)</span>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input 
+              type="email" 
+              id="email" 
+              class="form-input" 
+              placeholder=" " 
+              required
+            >
+            <label for="email" class="form-label">Email Address</label>
+            <div class="validation-icon validation-icon-valid" style="color: var(--success-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="validation-icon validation-icon-invalid" style="color: var(--error-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <span class="error-message" id="emailError">Please enter a valid email address</span>
+        </div>
+
+        <!-- Phone Number Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input 
+              type="tel" 
+              id="phone" 
+              class="form-input" 
+              placeholder=" " 
+              required
+            >
+            <label for="phone" class="form-label">Phone Number</label>
+            <div class="validation-icon validation-icon-valid" style="color: var(--success-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="validation-icon validation-icon-invalid" style="color: var(--error-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <span class="error-message" id="phoneError">Please enter a valid 10-digit phone number</span>
+        </div>
+
+        <!-- Course Field (Dropdown) -->
+        <div class="form-group">
+          <div class="input-container">
+            <select id="course" class="form-input" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+              <option value="Data Science & Analytics">Data Science & Analytics</option>
+              <option value="Full-Stack Web Development">Full-Stack Web Development</option>
+              <option value="Artificial Intelligence & ML">Artificial Intelligence & ML</option>
+              <option value="Cybersecurity & Cloud Computing">Cybersecurity & Cloud Computing</option>
+            </select>
+            <label for="course" class="form-label">Select Course</label>
+            <div class="select-arrow"></div>
+            <div class="validation-icon validation-icon-valid" style="color: var(--success-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="validation-icon validation-icon-invalid" style="color: var(--error-color);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <span class="error-message" id="courseError">Please select a course to register</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span>Register Now</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+      </form>
+
+      <!-- Success Screen Overlay -->
+      <div class="success-overlay" id="successOverlay">
+        <div class="success-icon-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h2 class="success-title">Registration Successful!</h2>
+        <p class="success-text">Your student enrollment has been confirmed. Below are your details:</p>
+        
+        <div class="success-details">
+          <div class="success-details-row">
+            <span class="success-details-label">Student Name:</span>
+            <span class="success-details-value" id="displayFullName">-</span>
+          </div>
+          <div class="success-details-row">
+            <span class="success-details-label">Email:</span>
+            <span class="success-details-value" id="displayEmail">-</span>
+          </div>
+          <div class="success-details-row">
+            <span class="success-details-label">Phone:</span>
+            <span class="success-details-value" id="displayPhone">-</span>
+          </div>
+          <div class="success-details-row">
+            <span class="success-details-label">Selected Course:</span>
+            <span class="success-details-value" id="displayCourse">-</span>
+          </div>
+        </div>
+
+        <button class="btn-reset" id="resetBtn">Register Another Student</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
